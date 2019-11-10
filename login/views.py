@@ -62,9 +62,9 @@ def login(request):
                 message = '用户不存在！'
                 return render(request, 'login/login.html', locals())
 
-            if not user.has_confirmed:
-                message = '该用户还未经邮件确认！'
-                return render(request, 'login/login.html', locals())
+            # if not user.has_confirmed:
+            #     message = '该用户还未经邮件确认！'
+            #     return render(request, 'login/login.html', locals())
 
             if user.password == hash_code(password):
                 request.session['is_login'] = True
